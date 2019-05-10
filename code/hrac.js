@@ -9,8 +9,6 @@ class Player extends GameObject {
 
     update(dt) {
 
-        console.log(dt);
-
         if(this.game.keys["ArrowUp"] && !this.jumping) {
             this.jumping = true;
             this.dir = -1;
