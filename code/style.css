@@ -1,0 +1,65 @@
+#container {
+    position: relative;
+    width: 1408px;
+    height: 792px;
+}
+
+#ui {
+    position: absolute;
+    width: 1408px;
+    height: 792px;
+}
+
+canvas {
+    position: absolute;
+}
+
+#main-menu {
+    position: absolute;
+    width: 1408px;
+    height: 792px;
+    background-image: url("../obrazky/pozadie_hry.jpg");
+
+}
+
+#main-menu p {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 300px;
+    color: aliceblue;
+}
+
+#game {
+    position: absolute;
+    width: 1408px;
+    height: 792px;
+    display: none;
+}
+
+#game-over {
+    position: absolute;
+    width: 1408px;
+    height: 792px;
+    display: none;
+    background-image: url("../obrazky/pozadie_hry.jpg");
+    text-align: center;
+}
+
+#game-over h1 {
+    color: white;
+}
+
+#game-over-score {
+    font-size: 30px;
+    color:white;
+    text-align: center;
+    margin-top: 300px;
+}
+
+#game p {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    font-size: 30px;
+    color:white;
+}

@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="canvas" height="792" width="1408"></canvas>
+    <div id="container">
+        <canvas id="canvas" height="792" width="1408"></canvas>
+        <div id="ui">
+            <div id="main-menu">
+                <p>Press to play</p>
+            </div>
+            <div id="game">
+                <p id="score">328402384</p>
+            </div>
+            <div id="game-over">
+                <h1>Game over</h1>
+                <p id="game-over-score"></p>
+            </div>
+        </div>
+    </div>
     <script src="hra.js"></script>
     <script src="gameobject.js"></script>
     <script src="pozadie.js"></script>
