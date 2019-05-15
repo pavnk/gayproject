@@ -63,3 +63,23 @@ canvas {
     font-size: 30px;
     color:white;
 }
+
+#heart {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    display: none;
+}
+
+#immunity {
+    position: absolute;
+    left: 100px;
+    bottom: 30px;
+    display: none;
+}
+
+#zvuk {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
