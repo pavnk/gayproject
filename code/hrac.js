@@ -1,32 +1,33 @@
 class Player extends GameObject {
     constructor(game, x, y) {
         super(game, x,y,"../obrazky/enemy_drone.png");
-        this.jumping = false;
-        this.dir = 1;
-        this.vx = 5;
         this.vy = 0;
     }
 
     update(dt) {
 
-        if(this.game.keys["ArrowUp"] && !this.jumping) {
-            this.jumping = true;
-            this.dir = -1;
+        if(this.game.keys["ArrowUp"]) {
+            if(this.y < 100)
+                this.vy = 0;
+            else
+                this.vy = -1;
+        }
+        else if(this.game.keys["ArrowDown"]) {
+            if(this.y > 550)
+                this.vy = 0;
+            else
+                this.vy = 1;        }
+        else {
+            if(this.y > 299) {
+                this.vy = -1;
+            } else if (this.y < 280) {
+                this.vy = 1;
+            } else {
+                this.vy = 0;
+            }
         }
 
-        if(this.jumping) {
-            this.vy = 1 * this.dir * dt;
-        }
-
-        if(this.y > 550) {
-            this.dir = -1;
-            this.jumping = false;
-            this.vy = 0;
-            this.y = 550;
-        } else if (this.y < 100){
-            this.dir = 1;
-        }
-
-        this.y += this.vy;
+        this.y += this.vy * dt;
     }
+
 }

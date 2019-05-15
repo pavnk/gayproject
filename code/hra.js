@@ -20,7 +20,7 @@ class Hra {
         this.bg = new Background();
         this.stage.addChild(this.bg);
 
-        this.player = new Player(this, 100, 549);
+        this.player = new Player(this, 100, 299);
         this.stage.addChild(this.player);
 
         this.prekazky = [];
