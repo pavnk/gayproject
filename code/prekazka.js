@@ -22,10 +22,17 @@ class Prekazka extends GameObject {
             this.game.circleIcon.style.display = "none";
             this.game.heartIcon.style.display = "none";
 
+
+            clearInterval(this.game.timerID);
+            clearInterval(this.game.timerID1);
+            clearInterval(this.game.timerID2);
+
             let audio = new Audio("../zvuky/koniec_hry.mp3");
             audio.play();
 
             document.addEventListener("click", () => {
+
+                window.location = window.location;
 
                 this.game.start();
                 this.game.gameOverNode.style.display = "none";

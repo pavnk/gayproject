@@ -30,11 +30,15 @@ class Hra {
         this.score = 0;
 
         this.handler = () => {
-            if(Math.random() > 0.5) {
+            this.vyska = Math.random() * (800 - 150);
+            /*let random = Math.random();
+            if(random < 1/3) {
                 this.vyska = 449 ;
-            } else {
+            } else if(random > 1/3 && random < 2/3) {
+                this.vyska = 299;
+            }  else {
                 this.vyska = 149;
-            }
+            }*/
             let prekazka = new Prekazka(this, 1500, this.vyska);
             this.stage.addChild(prekazka);
         };
@@ -53,8 +57,6 @@ class Hra {
             }
         };
 
-        let bonus = new Bonus1(this, 1500, 299);
-        this.stage.addChild(bonus);
 
         this.running = false;
 
@@ -70,21 +72,20 @@ class Hra {
         this.timerID1 = null;
         this.timerID2 = null;
 
-        this.listenerStart = () => {
+        this.listenerStart = (e) => {
+            if (e.key === "Enter") {
                 this.running = true;
                 this.menu.style.display = "none";
                 this.gameNode.style.display = "block";
                 this.timerID = setInterval(this.handler, 2000);
                 this.timerID1 = setInterval(this.bonusHandler1, 10000);
-                this.timerID2 = setInterval(this.bonusHandler2, 1000);
+                this.timerID2 = setInterval(this.bonusHandler2, 15000);
+                document.removeEventListener("keypress", this.listenerStart);
+
+            }
         };
 
-        document.addEventListener("keypress",(e) => {
-            if (e.key === "Enter") {
-                this.listenerStart();
-                document.removeEventListener("keypress", this.listenerStart);
-            }
-        });
+        document.addEventListener("keypress",this.listenerStart);
 
         let music = new Audio("../zvuky/hudba_v_pozadi.mp3");
         music.loop = true;

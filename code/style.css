@@ -22,11 +22,18 @@ canvas {
 
 }
 
-#main-menu p {
+#text {
     font-size: 50px;
     text-align: center;
     margin-top: 300px;
-    color: aliceblue;
+    color: #f4c842;
+}
+
+#text1 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+    color: #f4c842;
 }
 
 #game {
@@ -46,14 +53,16 @@ canvas {
 }
 
 #game-over h1 {
-    color: white;
+    font-size: 100px;
+    text-align: center;
+    margin-top: 300px;
+    color: #f4c842;
 }
 
 #game-over-score {
     font-size: 30px;
-    color:white;
+    color: #f4c842;
     text-align: center;
-    margin-top: 300px;
 }
 
 #game p {
@@ -61,7 +70,7 @@ canvas {
     right: 30px;
     top: 30px;
     font-size: 30px;
-    color:white;
+    color: #f4c842;
 }
 
 #heart {
